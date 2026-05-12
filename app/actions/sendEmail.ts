@@ -11,7 +11,7 @@ const formSchema = z.object({
   // Regex para teléfonos de USA: acepta (123) 456-7890, 123-456-7890, 123.456.7890, 1234567890
   phone: z.string().regex(/^\(?([0-9]{3})\)?[-.\s]?([0-9]{3})[-.\s]?([0-9]{4})$/, "Invalid US phone number format"),
   service: z.enum(['family-home', 'move-in-out', 'last-minute', 'special-occasion'], {
-    errorMap: () => ({ message: "Please select a valid service" })
+    message: "Please select a valid service"
   }),
   message: z.string().min(10, "Message is too short").max(1000, "Message is too long").trim(),
   recaptchaToken: z.string().min(1, "CAPTCHA verification is required")

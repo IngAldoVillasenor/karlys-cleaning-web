@@ -1,10 +1,49 @@
 "use client";
 
-import React from 'react';
+import { useState, useRef } from 'react';
 import Image from 'next/image';
+import ReCAPTCHA from 'react-google-recaptcha';
+import { sendEmailForm } from './actions/sendEmail';
 import styles from './page.module.css';
 
 export default function LandingPage() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error' | 'captchaError'>('idle');
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  
+  // Nuevo estado para guardar los errores de los campos (Zod)
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string[]>>({});
+  
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
+
+  async function handleSubmit(formData: FormData) {
+    // Reseteamos errores previos
+    setFieldErrors({});
+    
+    if (!captchaToken) {
+      setSubmitStatus('captchaError');
+      return;
+    }
+
+    setIsSubmitting(true);
+    formData.append('recaptchaToken', captchaToken);
+    
+    const response = await sendEmailForm(formData);
+    
+    if (response.success) {
+      setSubmitStatus('success');
+      if (recaptchaRef.current) recaptchaRef.current.reset();
+      setCaptchaToken(null);
+    } else {
+      setSubmitStatus('error');
+      // Si Zod devolvió errores específicos de los campos, los guardamos en el estado
+      if (response.errors) {
+        setFieldErrors(response.errors);
+      }
+    }
+    
+    setIsSubmitting(false);
+  }
   return (
     <div className={styles.pageWrapper}>
       {/* HEADER */}
@@ -107,35 +146,66 @@ export default function LandingPage() {
         </div>
 
         <div className={styles.formBox}>
-          <form onSubmit={(e) => e.preventDefault()}>
+          <form action={handleSubmit}>
+            {submitStatus === 'success' && (
+              <div style={{ padding: '1rem', backgroundColor: '#dcfce7', color: '#166534', borderRadius: '8px', marginBottom: '1rem' }}>
+                Thank you! Your request has been sent. We will get in touch with you shortly.
+              </div>
+            )}
+
+            {submitStatus === 'error' && (
+              <div style={{ padding: '1rem', backgroundColor: '#fee2e2', color: '#991b1b', borderRadius: '8px', marginBottom: '1rem' }}>
+                There was a problem sending your request. Please try again.
+              </div>
+            )}
+
+            {submitStatus === 'captchaError' && (
+              <div style={{ padding: '1rem', backgroundColor: '#fef08a', color: '#854d0e', borderRadius: '8px', marginBottom: '1rem' }}>
+                Please verify that you are not a robot.
+              </div>
+            )}
+
             <div className={styles.formGroup}>
               <label>Full Name</label>
-              <input type="text" placeholder="John Doe" required />
+              <input type="text" name="name" placeholder="John Doe" required disabled={isSubmitting} />
+              {fieldErrors.name && <p style={{ color: '#dc2626', fontSize: '0.875rem', marginTop: '0.25rem' }}>{fieldErrors.name[0]}</p>}
             </div>
             
             <div className={styles.formGroup}>
               <label>Phone Number</label>
-              <input type="tel" placeholder="267-000-0000" required />
+              <input type="tel" name="phone" placeholder="267-844-9066" required disabled={isSubmitting} />
+              {fieldErrors.phone && <p style={{ color: '#dc2626', fontSize: '0.875rem', marginTop: '0.25rem' }}>{fieldErrors.phone[0]}</p>}
             </div>
             
             <div className={styles.formGroup}>
               <label>Type of Service</label>
-              <select required>
+              <select name="service" required disabled={isSubmitting}>
                 <option value="">Select a service...</option>
                 <option value="family-home">Family Home Cleaning</option>
                 <option value="move-in-out">Move-in / Move-out</option>
                 <option value="last-minute">Last Minute Cleaning</option>
                 <option value="special-occasion">Party / Special Occasion</option>
               </select>
+              {fieldErrors.service && <p style={{ color: '#dc2626', fontSize: '0.875rem', marginTop: '0.25rem' }}>{fieldErrors.service[0]}</p>}
             </div>
 
             <div className={styles.formGroup}>
               <label>Message / Details</label>
-              <textarea rows={4} placeholder="Tell us about your home..." required></textarea>
+              <textarea name="message" rows={4} placeholder="Tell us about your home..." required disabled={isSubmitting}></textarea>
+              {fieldErrors.message && <p style={{ color: '#dc2626', fontSize: '0.875rem', marginTop: '0.25rem' }}>{fieldErrors.message[0]}</p>}
             </div>
 
-            <button type="submit" className={styles.submitBtn}>
-              Request Information
+            {/* COMPONENTE RECAPTCHA */}
+            <div style={{ marginBottom: '1.5rem' }}>
+              <ReCAPTCHA
+                ref={recaptchaRef}
+                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+                onChange={(token) => setCaptchaToken(token)}
+              />
+            </div>
+
+            <button type="submit" className={styles.submitBtn} disabled={isSubmitting}>
+              {isSubmitting ? 'Sending...' : 'Request Information'}
             </button>
           </form>
         </div>

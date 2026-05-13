@@ -49,17 +49,16 @@ export default function LandingPage() {
       {/* HEADER */}
       <header className={styles.header}>
         <div className={styles.logo}>
-          {/* Asegúrate de tener public/logo.png */}
           <Image 
             src="/logo.png" 
             alt="Karly's Cleaning Services Logo" 
-            width={200} 
-            height={60} 
+            width={320}  
+            height={120}
             style={{ objectFit: 'contain' }}
             priority
           />
         </div>
-        <div style={{ fontWeight: 600, color: '#1e40af' }}>
+        <div style={{ fontWeight: 700, color: '#1b2a4e', fontSize: '1.1rem' }}>
           Call us: 267-844-9066
         </div>
       </header>

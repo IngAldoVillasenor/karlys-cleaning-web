@@ -10,26 +10,20 @@
 /* Header */
 .header {
   background-color: #ffffff;
-  padding: 1.5rem 5%;
+  padding: 1rem 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   position: sticky;
   top: 0;
   z-index: 100;
 }
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #1e3a8a;
-}
-
-/* Hero Section */
+/* Hero Section - Ahora con degradado Cian/Turquesa */
 .hero {
-  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, #00b4d8 0%, #48cae4 100%);
+  color: #1b2a4e; /* Texto azul marino para contraste perfecto */
   padding: 5rem 5%;
 }
 
@@ -46,16 +40,18 @@
   flex: 1;
 }
 
+/* Badge amarillo mantenido, pero con texto marino */
 .promoBadge {
   display: inline-block;
-  background-color: #fbbf24;
-  color: #854d0e;
-  font-weight: 700;
-  padding: 0.5rem 1.5rem;
+  background-color: #ffb703;
+  color: #1b2a4e;
+  font-weight: 800;
+  padding: 0.6rem 1.8rem;
   border-radius: 50px;
   margin-bottom: 2rem;
   font-size: 1.1rem;
   letter-spacing: 0.5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .heroTitle {
@@ -67,7 +63,9 @@
 
 .heroSubtitle {
   font-size: 1.25rem;
-  color: #bfdbfe;
+  color: #1b2a4e; 
+  font-weight: 500;
+  opacity: 0.9;
 }
 
 .heroImageWrapper {
@@ -75,25 +73,9 @@
   position: relative;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  /* Aspect ratio para mantener la imagen proporcionada */
+  box-shadow: 0 25px 50px -12px rgba(27, 42, 78, 0.3);
   aspect-ratio: 4 / 3; 
-}
-
-@media (max-width: 968px) {
-  .heroContent {
-    flex-direction: column;
-    text-align: center;
-  }
-  .heroImageWrapper {
-    width: 100%;
-    max-width: 600px;
-  }
-}
-
-@media (max-width: 768px) {
-  .heroTitle { font-size: 2.5rem; }
-  .contactSection { grid-template-columns: 1fr; }
+  border: 4px solid #1b2a4e; /* Borde de la imagen invertido a marino */
 }
 
 /* Features Grid */
@@ -106,8 +88,9 @@
 .sectionTitle {
   text-align: center;
   font-size: 2.5rem;
-  color: #1e3a8a;
+  color: #1b2a4e;
   margin-bottom: 3rem;
+  font-weight: 800;
 }
 
 .grid {
@@ -120,14 +103,15 @@
   background: #ffffff;
   padding: 2.5rem;
   border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  border-top: 4px solid #3b82f6;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border-top: 5px solid #1b2a4e; /* Acento superior de las tarjetas en marino */
 }
 
 .card h3 {
-  color: #1e3a8a;
-  font-size: 1.25rem;
+  color: #1b2a4e;
+  font-size: 1.3rem;
   margin-bottom: 1rem;
+  font-weight: 700;
 }
 
 .card ul {
@@ -139,14 +123,16 @@
   margin-bottom: 0.75rem;
   padding-left: 1.5rem;
   position: relative;
+  color: #475569;
 }
 
+/* Viñetas amarillas */
 .card ul li::before {
-  content: '✓';
-  color: #22c55e;
+  content: '★';
+  color: #ffb703; 
   position: absolute;
   left: 0;
-  font-weight: bold;
+  font-size: 1.1rem;
 }
 
 /* Contact & Form Section */
@@ -160,29 +146,33 @@
 }
 
 .contactInfo h2 {
-  font-size: 2rem;
-  color: #1e3a8a;
+  font-size: 2.2rem;
+  color: #1b2a4e;
   margin-bottom: 1.5rem;
+  font-weight: 800;
 }
 
 .infoItem {
   margin-bottom: 1.5rem;
   font-size: 1.1rem;
+  color: #334155;
 }
 
 .infoItem strong {
   display: block;
-  color: #64748b;
-  font-size: 0.9rem;
+  color: #1b2a4e; /* Títulos de contacto en marino */
+  font-size: 0.95rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  font-weight: 800;
 }
 
 .formBox {
   background: #ffffff;
   padding: 3rem;
   border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 180, 216, 0.1); /* Sombra sutil cian */
+  border: 1px solid #e2e8f0;
 }
 
 .formGroup {
@@ -193,47 +183,81 @@
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 600;
+  color: #1b2a4e;
 }
 
 .formGroup input,
 .formGroup select,
 .formGroup textarea {
   width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #cbd5e1;
+  padding: 0.85rem;
+  border: 2px solid #e2e8f0;
   border-radius: 6px;
   font-family: inherit;
   font-size: 1rem;
+  transition: border-color 0.3s;
 }
 
+/* Efecto focus invertido a marino */
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: #1b2a4e;
+}
+
+/* Botón invertido: Ahora es Marino por defecto y Cian en hover */
 .submitBtn {
   width: 100%;
-  background-color: #1e40af;
+  background-color: #1b2a4e; 
   color: #ffffff;
-  padding: 1rem;
+  padding: 1.1rem;
   border: none;
   border-radius: 6px;
   font-size: 1.1rem;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(27, 42, 78, 0.2);
 }
 
-.submitBtn:hover {
-  background-color: #1e3a8a;
+.submitBtn:hover:not(:disabled) {
+  background-color: #00b4d8; 
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 180, 216, 0.3);
 }
 
-/* Footer */
+.submitBtn:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Footer invertido: Fondo Cian con texto Marino */
 .footer {
-  background-color: #0f172a;
-  color: #94a3b8;
+  background-color: #00b4d8; 
+  color: #1b2a4e;
   text-align: center;
   padding: 3rem 5%;
+  border-top: 4px solid #1b2a4e; /* Borde superior marino */
 }
 
 .footer h3 {
-  color: #ffffff;
+  color: #1b2a4e;
   margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+@media (max-width: 968px) {
+  .heroContent {
+    flex-direction: column;
+    text-align: center;
+  }
+  .heroImageWrapper {
+    width: 100%;
+    max-width: 600px;
+  }
 }
 
 @media (max-width: 768px) {

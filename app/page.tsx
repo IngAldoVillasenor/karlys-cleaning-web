@@ -73,7 +73,7 @@ export default function LandingPage() {
             "name": "Karly's Cleaning Services", // [cite: 10]
             "image": "https://karlys-cleaning-web.vercel.app/hero-image.jpg",
             "telephone": "267-844-9066", // 
-            "email": "gkaty662@gmail.com", // [cite: 9]
+            "email": "contact@karlyscleaning.com", // [cite: 9]
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "West Chester", // 
@@ -165,7 +165,7 @@ export default function LandingPage() {
           </div>
           <div className={styles.infoItem}>
             <strong>Email</strong>
-            gkaty662@gmail.com
+            contact@karlyscleaning.com
           </div>
           <div className={styles.infoItem}>
             <strong>Location</strong>

@@ -68,8 +68,8 @@ export async function sendEmailForm(formData: FormData) {
     const safeMessage = escapeHtml(message);
 
     const { data, error } = await resend.emails.send({
-      from: 'Website Form <onboarding@resend.dev>',
-      to: ['vidaest33@gmail.com'], 
+      from: 'Website Form <website@karlyscleaning.com>',
+      to: ['contact@karlyscleaning.com'], 
       subject: `New cleaning quote request from: ${safeName}`,
       html: `
         <h2>New Quote Request</h2>

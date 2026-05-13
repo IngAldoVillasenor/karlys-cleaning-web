@@ -64,6 +64,35 @@ export default function LandingPage() {
         </div>
       </header>
 
+      {/* JSON-LD Schema Markup para Local SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Karly's Cleaning Services", // [cite: 10]
+            "image": "https://karlys-cleaning-web.vercel.app/hero-image.jpg",
+            "telephone": "267-844-9066", // 
+            "email": "gkaty662@gmail.com", // [cite: 9]
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "West Chester", // 
+              "addressRegion": "PA", // 
+              "addressCountry": "US"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 39.9607, // Coordenadas aproximadas de West Chester
+              "longitude": -75.6055
+            },
+            "url": "https://karlys-cleaning-web.vercel.app",
+            "priceRange": "$$",
+            "founder": "Karla Garcia" // [cite: 5]
+          })
+        }}
+      />
+
       {/* HERO SECTION */}
       <section className={styles.hero}>
         <div className={styles.heroContent}>

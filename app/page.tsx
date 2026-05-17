@@ -124,8 +124,10 @@ export default function LandingPage() {
             <a href="#services" className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>Services</a>
             <a href="#promise" className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>About Us</a>
             <a href="#gallery" className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>Gallery</a>
-            <div style={{ marginTop: '1rem', width: '100%' }}>
-              <a href="#contact" className={styles.submitBtn} style={{ textAlign: 'center', display: 'block', textDecoration: 'none' }} onClick={() => setIsMenuOpen(false)}>
+            
+            {/* Contenedor del botón ajustado */}
+            <div style={{ marginTop: '1rem', width: '100%', boxSizing: 'border-box' }}>
+              <a href="#contact" className={styles.submitBtn} onClick={() => setIsMenuOpen(false)}>
                 Get a Quote
               </a>
             </div>

@@ -229,6 +229,8 @@
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 6px rgba(27, 42, 78, 0.2);
+  box-sizing: border-box; 
+  text-align: center;      
 }
 
 .submitBtn:hover:not(:disabled) {
@@ -412,6 +414,12 @@
     text-align: center;
     padding: 0.5rem 0;
     border-bottom: 1px solid #f1f5f9;
+  }
+
+  .mobileMenu .submitBtn {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
   }
 }
 

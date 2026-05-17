@@ -249,7 +249,115 @@
   font-weight: 800;
 }
 
+/* --- Top Bar --- */
+.topBar {
+  background-color: #1b2a4e; /* Azul marino */
+  color: #e2e8f0;
+  padding: 0.5rem 5%;
+  font-size: 0.9rem;
+  border-bottom: 3px solid #00b4d8; /* Línea de acento cian */
+}
+
+.topBarContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topBarItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.topBarItem a {
+  color: #00b4d8;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.topBarItem a:hover {
+  color: #ffffff;
+}
+
+/* --- Header & Desktop Nav --- */
+.header {
+  background-color: #ffffff;
+  padding: 1rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  gap: 2rem;
+}
+
+.desktopNav {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+  flex: 1; /* Toma el espacio disponible */
+  justify-content: flex-end; /* Empuja el menú hacia la derecha */
+  padding-right: 1rem; /* Separación entre el menú y el botón CTA */
+}
+
+.navLink {
+  text-decoration: none;
+  color: #1b2a4e;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: color 0.3s;
+}
+
+.navLink:hover {
+  color: #00b4d8;
+}
+
+/* --- Elementos Ocultos por defecto (Móvil) --- */
+.hamburgerBtn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #1b2a4e;
+  cursor: pointer;
+  padding: 0;
+}
+
+.mobileMenu {
+  display: none;
+}
+
+/* --- Navegación --- */
+.navMenu {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.navLink {
+  text-decoration: none;
+  color: #1b2a4e;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.navLink:hover {
+  color: #00b4d8;
+}
+
+/* =========================================
+   Responsive Design (Tablets y Móviles)
+   ========================================= */
+
 @media (max-width: 968px) {
+  /* Ajustes del Hero */
   .heroContent {
     flex-direction: column;
     text-align: center;
@@ -258,9 +366,326 @@
     width: 100%;
     max-width: 600px;
   }
+  
+  /* Ocultar elementos de escritorio */
+  .desktopNav, .desktopCta { 
+    display: none; 
+  }
+  
+  /* Mostrar botón de hamburguesa */
+  .hamburgerBtn { 
+    display: block; 
+  }
+
+  /* Estilos del Menú Desplegable Móvil */
+  .mobileMenu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 1.5rem 5%;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid #e2e8f0;
+    gap: 1.5rem;
+    z-index: 99;
+  }
+
+  .mobileNavLink {
+    text-decoration: none;
+    color: #1b2a4e;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f1f5f9;
+  }
 }
 
 @media (max-width: 768px) {
   .heroTitle { font-size: 2.5rem; }
   .contactSection { grid-template-columns: 1fr; }
+  
+  /* Ajustes de la Top Bar en celulares para que no se amontone */
+  .topBarContent {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  .header { padding: 1rem; }
+
+  /* Ajuste de Logo */
+  .logo { width: 180px; }
+  .logo img { width: 100% !important; height: auto !important; }
+}
+
+@media (max-width: 400px) {
+  .logo { width: 140px; }
+}
+
+/* --- Botones de Llamado a la Acción (CTA) --- */
+.ctaContainer {
+  text-align: center;
+  margin-top: 3.5rem;
+}
+
+.ctaButton {
+  display: inline-block;
+  background: #00b4d8;
+  color: #ffffff;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 800;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 180, 216, 0.4);
+}
+
+.ctaButton:hover {
+  background: #1b2a4e;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(27, 42, 78, 0.3);
+}
+
+/* --- Values & Promise Section (NUEVO ESTILO OSCURO) --- */
+.promiseSection {
+  /* Fondo oscuro elegante con el color marino de la marca */
+  background: linear-gradient(135deg, #1b2a4e 0%, #0f172a 100%);
+  padding: 5rem 5%;
+  color: #ffffff;
+}
+
+/* Sobrescribir el color del título solo para esta sección */
+.promiseSection .sectionTitle {
+  color: #ffffff;
+}
+
+.promiseGrid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+}
+
+.promiseCard {
+  text-align: center;
+  padding: 2.5rem 2rem;
+  background: rgba(255, 255, 255, 0.03); /* Efecto cristal sutil */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
+}
+
+.promiseCard:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.promiseIcon {
+  width: 70px;
+  height: 70px;
+  background-color: rgba(0, 180, 216, 0.1); /* Fondo cian transparente */
+  color: #00b4d8; /* Ícono cian brillante */
+  border: 2px solid #00b4d8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0 auto 1.5rem auto;
+}
+
+.promiseCard h3 {
+  color: #00b4d8; /* Títulos en cian para contrastar con el fondo oscuro */
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+
+.promiseCard p {
+  color: #cbd5e1; /* Texto gris claro para mejor legibilidad */
+}
+
+/* --- Values & Promise Section --- 
+.promiseSection {
+  background-color: #f8fafc;
+  padding: 5rem 5%;
+  border-top: 1px solid #e2e8f0;
+}
+
+.promiseGrid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+}
+
+.promiseCard {
+  text-align: center;
+  padding: 2rem;
+}
+
+.promiseIcon {
+  width: 64px;
+  height: 64px;
+  background-color: #00b4d8;
+  color: #1b2a4e;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0 auto 1.5rem auto;
+  box-shadow: 0 10px 20px rgba(0, 180, 216, 0.2);
+}
+
+.promiseCard h3 {
+  color: #1b2a4e;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+
+.promiseCard p {
+  color: #475569;
+} */
+
+/* --- Before & After Gallery --- */
+.gallerySection {
+  background-color: #ffffff;
+  padding: 5rem 5%;
+}
+
+/* --- Carrusel de Galería --- */
+.galleryCarousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 2rem;
+  padding: 1rem 1rem 3rem 1rem;
+  scroll-snap-type: x mandatory; /* Hace que el scroll se detenga suavemente en cada imagen */
+  
+  /* Estilos para una barra de scroll elegante */
+  scrollbar-width: thin;
+  scrollbar-color: #00b4d8 #f1f5f9;
+}
+
+.galleryCarousel::-webkit-scrollbar {
+  height: 8px;
+}
+.galleryCarousel::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+.galleryCarousel::-webkit-scrollbar-thumb {
+  background: #00b4d8;
+  border-radius: 4px;
+}
+
+.galleryCarouselItem {
+  flex: 0 0 320px; /* Ancho fijo para cada imagen. 0 0 evita que se encojan */
+  scroll-snap-align: center;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(27, 42, 78, 0.08);
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto al pasar el mouse para invitar al clic */
+.galleryCarouselItem:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 180, 216, 0.3);
+}
+
+/* --- Modal / Lightbox --- */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 23, 42, 0.95); /* Fondo oscuro semitransparente */
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  backdrop-filter: blur(5px);
+}
+
+.lightboxClose {
+  position: absolute;
+  top: 1.5rem;
+  right: 2.5rem;
+  color: #ffffff;
+  font-size: 3rem;
+  cursor: pointer;
+  z-index: 10000;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.lightboxClose:hover {
+  color: #00b4d8;
+}
+
+.lightboxContent {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  height: 85vh;
+}
+
+.galleryItem {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(27, 42, 78, 0.08);
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.imageComparison {
+  display: flex;
+  width: 100%;
+  height: 250px;
+}
+
+.imageWrapper {
+  flex: 1;
+  position: relative;
+}
+
+.imageLabel {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(27, 42, 78, 0.85);
+  color: #ffffff;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  z-index: 10;
+}
+
+.galleryCaption {
+  padding: 1.5rem;
+  text-align: center;
+  color: #1b2a4e;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-top: 3px solid #00b4d8;
 }

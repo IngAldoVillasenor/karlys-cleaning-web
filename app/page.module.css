@@ -464,7 +464,7 @@
 
   /* Control total sobre la imagen del logo en móvil */
   .logo {
-    width: 160px; /* Tamaño base muy seguro para pantallas chicas */
+    width: 215px; /* Tamaño base muy seguro para pantallas chicas */
   }
   
   .logo img {
@@ -484,7 +484,7 @@
 }
 
 @media (max-width: 400px) {
-  .logo { width: 140px; }
+  .logo { width: 165px; }
 }
 
 /* --- Botones de Llamado a la Acción (CTA) --- */

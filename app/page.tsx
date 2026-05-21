@@ -88,8 +88,8 @@ export default function LandingPage() {
           <Image 
             src="/5 Background Removed.png" 
             alt="Karly's Cleaning Services Logo" 
-            width={320}  
-            height={120} 
+            width={380}  
+            height={140} 
             style={{ objectFit: 'contain' }}
             priority
           />
@@ -388,8 +388,8 @@ export default function LandingPage() {
             <Image 
               src="/5 Background Removed.png" 
               alt="Karly's Cleaning Services" 
-              width={260} 
-              height={100} 
+              width={310} 
+              height={120} 
               style={{ objectFit: 'contain' }}
             />
           </div>
@@ -486,8 +486,8 @@ export default function LandingPage() {
           <Image 
             src="/5 Background Removed.png" 
             alt="Karly's Cleaning Services Logo Footer" 
-            width={180} 
-            height={70} 
+            width={215} 
+            height={85} 
             style={{ objectFit: 'contain' }}
           />
         </div>

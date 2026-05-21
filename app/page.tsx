@@ -313,7 +313,7 @@ export default function LandingPage() {
           {/* NUEVO: Logo integrado en los datos de contacto */}
           <div className={styles.contactLogoWrapper}>
             <Image 
-              src="/logo.png" 
+              src="/5 Background Removed.png" 
               alt="Karly's Cleaning Services" 
               width={260} 
               height={100} 
@@ -411,7 +411,7 @@ export default function LandingPage() {
         {/* NUEVO: Logo integrado en el pie de página */}
         <div className={styles.footerLogoWrapper}>
           <Image 
-            src="/logo.png" 
+            src="/Logo Footer.jpg" 
             alt="Karly's Cleaning Services Logo Footer" 
             width={180} 
             height={70} 

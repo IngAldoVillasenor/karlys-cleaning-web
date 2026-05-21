@@ -309,28 +309,35 @@ export default function LandingPage() {
       {/* CONTACT & FORM SECTION */}
       <section id="contact" className={styles.contactSection}>
         <div className={styles.contactInfo}>
-          <h2>Get a Free Quote</h2>
-          <p style={{ marginBottom: '2rem', fontSize: '1.1rem' }}>
-            Ready for a spotless home? Fill out the form or contact us directly.
-          </p>
+          
+          {/* NUEVO: Logo integrado en los datos de contacto */}
+          <div className={styles.contactLogoWrapper}>
+            <Image 
+              src="/logo.png" 
+              alt="Karly's Cleaning Services" 
+              width={260} 
+              height={100} 
+              style={{ objectFit: 'contain' }}
+            />
+          </div>
+
+          <h2>Contact Us Today</h2>
           
           <div className={styles.infoItem}>
-            <strong>Owner</strong>
-            Karla Garcia
+            <strong>📍 Service Area</strong>
+            West Chester, PA & Surrounding Areas
           </div>
           <div className={styles.infoItem}>
-            <strong>Phone</strong>
-            267-844-9066
+            <strong>📞 Phone Number</strong>
+            <a href="tel:2678449066" style={{ color: 'inherit', fontWeight: 'bold' }}>267-844-9066</a>
           </div>
           <div className={styles.infoItem}>
-            <strong>Email</strong>
-            contact@karlyscleaning.com
-          </div>
-          <div className={styles.infoItem}>
-            <strong>Location</strong>
-            West Chester, PA.
+            <strong>⏰ Hours of Operation</strong>
+            Monday - Saturday: 8:00 AM - 6:00 PM <br />
+            Sunday: Closed
           </div>
         </div>
+
 
         <div className={styles.formBox}>
           <form action={handleSubmit}>
@@ -400,9 +407,21 @@ export default function LandingPage() {
 
       {/* FOOTER */}
       <footer className={styles.footer}>
-        <h3>Karly's Cleaning Services LLC</h3>
-        <p style={{ marginBottom: '1rem' }}>West Chester, PA. | Fully Insured</p>
-        <p style={{ fontSize: '0.875rem' }}>© {new Date().getFullYear()} Owner: Karla Garcia. All rights reserved.</p>
+        
+        {/* NUEVO: Logo integrado en el pie de página */}
+        <div className={styles.footerLogoWrapper}>
+          <Image 
+            src="/logo.png" 
+            alt="Karly's Cleaning Services Logo Footer" 
+            width={180} 
+            height={70} 
+            style={{ objectFit: 'contain' }}
+          />
+        </div>
+
+        <p style={{ marginTop: '1rem', fontWeight: 600 }}>
+          ©️ {new Date().getFullYear()} Karly's Cleaning Services LLC. All rights reserved.
+        </p>
       </footer>
     </div>
   );

@@ -364,6 +364,30 @@
   color: #00b4d8;
 }
 
+/* --- Ajustes de posicionamiento para los nuevos logos --- */
+
+.contactLogoWrapper {
+  margin-bottom: 2rem;
+  display: block;
+}
+
+.footerLogoWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* Forzar que el logo del footer sea sutil y no compita con el principal */
+.footerLogoWrapper img {
+  opacity: 0.9;
+  transition: opacity 0.3s;
+}
+
+.footerLogoWrapper img:hover {
+  opacity: 1;
+}
+
 /* =========================================
    Responsive Design (Tablets y Móviles)
    ========================================= */
@@ -448,6 +472,15 @@
     height: auto !important;
     object-fit: contain;
   }
+
+  /* Centra el logo de contacto en pantallas de celular */
+  .contactLogoWrapper {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
 }
 
 @media (max-width: 400px) {

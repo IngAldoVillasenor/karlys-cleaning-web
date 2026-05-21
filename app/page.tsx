@@ -411,7 +411,7 @@ export default function LandingPage() {
         {/* NUEVO: Logo integrado en el pie de página */}
         <div className={styles.footerLogoWrapper}>
           <Image 
-            src="/Logo Footer.jpg" 
+            src="/Logo footer.jpg" 
             alt="Karly's Cleaning Services Logo Footer" 
             width={180} 
             height={70} 

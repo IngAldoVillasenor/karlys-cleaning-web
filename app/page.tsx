@@ -306,6 +306,79 @@ export default function LandingPage() {
         </div>
       )}
 
+      {/* TESTIMONIALS SECTION */}
+      <section className={styles.reviewsSection}>
+        <h2 className={styles.sectionTitle}>What Our Customers Are Saying</h2>
+        <p style={{ textAlign: 'center', marginBottom: '3rem', color: '#475569', fontSize: '1.1rem' }}>
+          Real reviews from your neighbors in West Chester and surrounding areas.
+        </p>
+
+        <div className={styles.reviewsGrid}>
+          
+          {/* Review 1 */}
+          <div className={styles.reviewCard}>
+            <div>
+              <div className={styles.stars}>★★★★★</div>
+              <p className={styles.reviewText}>
+                "Karly's team does an incredible job. They are always on time, thorough, and very professional. Coming home to a sparkling clean house after a long week is the best feeling. Highly recommended!"
+              </p>
+            </div>
+            <div className={styles.reviewerInfo}>
+              <div className={styles.reviewerAvatar} style={{ backgroundColor: '#00b4d8' }}>SM</div>
+              <div>
+                <span className={styles.reviewerName}>Sarah M.</span>
+                <span className={styles.reviewMeta}>West Chester, PA • Verified Customer</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Review 2 */}
+          <div className={styles.reviewCard}>
+            <div>
+              <div className={styles.stars}>★★★★★</div>
+              <p className={styles.reviewText}>
+                "We hired them for a move-out cleaning, and they exceeded our expectations. The bathrooms and kitchen looked brand new. The landlord was thrilled, and we got our full security deposit back!"
+              </p>
+            </div>
+            <div className={styles.reviewerInfo}>
+              <div className={styles.reviewerAvatar}>JD</div>
+              <div>
+                <span className={styles.reviewerName}>John D.</span>
+                <span className={styles.reviewMeta}>Exton, PA • Verified Customer</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Review 3 */}
+          <div className={styles.reviewCard}>
+            <div>
+              <div className={styles.stars}>★★★★★</div>
+              <p className={styles.reviewText}>
+                "Extremely trustworthy and detailed-oriented. With two dogs at home, keeping up with the pet hair is exhausting, but they leave my floors completely spotless every single time. 10 out of 10!"
+              </p>
+            </div>
+            <div className={styles.reviewerInfo}>
+              <div className={styles.reviewerAvatar} style={{ backgroundColor: '#ffb703', color: '#1b2a4e' }}>LR</div>
+              <div>
+                <span className={styles.reviewerName}>Linda R.</span>
+                <span className={styles.reviewMeta}>Downingtown, PA • Verified Customer</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        {/* Insignia de Google para dar autenticidad */}
+        <div className={styles.googleBadge}>
+          <span>⭐️ 4.9/5 Rating on Google Business</span>
+        </div>
+        
+        {/* Llamado a la acción secundario debajo de las opiniones */}
+        <div className={styles.ctaContainer} style={{ marginTop: '2.5rem' }}>
+          <a href="#contact" className={styles.ctaButton}>Join Our Happy Customers</a>
+        </div>
+      </section>
+
       {/* CONTACT & FORM SECTION */}
       <section id="contact" className={styles.contactSection}>
         <div className={styles.contactInfo}>

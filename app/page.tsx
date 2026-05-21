@@ -86,7 +86,7 @@ export default function LandingPage() {
       <header className={styles.header}>
         <div className={styles.logo}>
           <Image 
-            src="/logo.png" 
+            src="/5 Background Removed.png" 
             alt="Karly's Cleaning Services Logo" 
             width={320}  
             height={120} 
@@ -411,7 +411,7 @@ export default function LandingPage() {
         {/* NUEVO: Logo integrado en el pie de página */}
         <div className={styles.footerLogoWrapper}>
           <Image 
-            src="/Logo footer.jpg" 
+            src="/5 Background Removed.png" 
             alt="Karly's Cleaning Services Logo Footer" 
             width={180} 
             height={70} 

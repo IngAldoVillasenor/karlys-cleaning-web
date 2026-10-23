@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { sendEmailForm } from './actions/sendEmail';
+import AboutSection from './components/AboutSection';
 import styles from './page.module.css';
 
 export default function LandingPage() {
@@ -98,7 +99,7 @@ export default function LandingPage() {
         {/* Navegación para Escritorio */}
         <nav className={styles.desktopNav}>
           <a href="#services" className={styles.navLink}>Services</a>
-          <a href="#promise" className={styles.navLink}>About Us</a>
+          <a href="#about" className={styles.navLink}>About Us</a>
           <a href="#gallery" className={styles.navLink}>Gallery</a>
         </nav>
 
@@ -122,7 +123,7 @@ export default function LandingPage() {
         {isMenuOpen && (
           <div className={styles.mobileMenu}>
             <a href="#services" className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>Services</a>
-            <a href="#promise" className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>About Us</a>
+            <a href="#about" className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>About Us</a>
             <a href="#gallery" className={styles.mobileNavLink} onClick={() => setIsMenuOpen(false)}>Gallery</a>
             
             {/* Contenedor del botón ajustado */}
@@ -174,7 +175,7 @@ export default function LandingPage() {
             </div>
             <h1 className={styles.heroTitle}>Let us take cleaning off your to-do list.</h1>
             <p className={styles.heroSubtitle}>
-              Karly's Cleaning Services LLC is proud to serve local families with dependable & detailed cleaning. Enjoy a sparkling home without the stress!
+              Karly&apos;s Cleaning Services LLC is proud to serve local families with dependable & detailed cleaning. Enjoy a sparkling home without the stress!
             </p>
           </div>
 
@@ -222,34 +223,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* THE KARLY'S PROMISE SECTION (Inspired by competitors) */}
-      <section id="promise" className={styles.promiseSection}>
-        <h2 className={styles.sectionTitle}>More Than Just a Cleaning Service</h2>
-        <div className={styles.promiseGrid}>
-          
-          <div className={styles.promiseCard}>
-            <div className={styles.promiseIcon}>✓</div>
-            <h3>Vetted & Trusted Professionals</h3>
-            <p>Your security is our priority. Every member of our team is carefully background-checked, fully insured, and highly trained to treat your home with the utmost respect.</p>
-          </div>
-
-          <div className={styles.promiseCard}>
-            <div className={styles.promiseIcon}>❤</div>
-            <h3>Community First</h3>
-            <p>We are a proud local business in West Chester, PA. We believe in giving back and supporting our community by providing a clean, healthy, and stress-free environment for local families.</p>
-          </div>
-
-          <div className={styles.promiseCard}>
-            <div className={styles.promiseIcon}>★</div>
-            <h3>Worry-Free Guarantee</h3>
-            <p>We hold our standards high. If you are not completely satisfied with our service, let us know within 24 hours, and we will return to make it right at no extra cost.</p>
-          </div>
-
-        </div>
-        <div className={styles.ctaContainer}>
-          <a href="#contact" className={styles.ctaButton}>Experience the Difference</a>
-        </div>
-      </section>
+      <AboutSection />
 
       <section id="gallery" className={styles.gallerySection}>
         <h2 className={styles.sectionTitle}>Our Work Gallery</h2>
@@ -320,7 +294,7 @@ export default function LandingPage() {
             <div>
               <div className={styles.stars}>★★★★★</div>
               <p className={styles.reviewText}>
-                "Karly's team does an incredible job. They are always on time, thorough, and very professional. Coming home to a sparkling clean house after a long week is the best feeling. Highly recommended!"
+                {"\"Karly's team does an incredible job. They are always on time, thorough, and very professional. Coming home to a sparkling clean house after a long week is the best feeling. Highly recommended!\""}
               </p>
             </div>
             <div className={styles.reviewerInfo}>
@@ -337,7 +311,7 @@ export default function LandingPage() {
             <div>
               <div className={styles.stars}>★★★★★</div>
               <p className={styles.reviewText}>
-                "We hired them for a move-out cleaning, and they exceeded our expectations. The bathrooms and kitchen looked brand new. The landlord was thrilled, and we got our full security deposit back!"
+                {"\"We hired them for a move-out cleaning, and they exceeded our expectations. The bathrooms and kitchen looked brand new. The landlord was thrilled, and we got our full security deposit back!\""}
               </p>
             </div>
             <div className={styles.reviewerInfo}>
@@ -354,7 +328,7 @@ export default function LandingPage() {
             <div>
               <div className={styles.stars}>★★★★★</div>
               <p className={styles.reviewText}>
-                "Extremely trustworthy and detailed-oriented. With two dogs at home, keeping up with the pet hair is exhausting, but they leave my floors completely spotless every single time. 10 out of 10!"
+                {"\"Extremely trustworthy and detailed-oriented. With two dogs at home, keeping up with the pet hair is exhausting, but they leave my floors completely spotless every single time. 10 out of 10!\""}
               </p>
             </div>
             <div className={styles.reviewerInfo}>
@@ -493,7 +467,7 @@ export default function LandingPage() {
         </div>
 
         <p style={{ marginTop: '1rem', fontWeight: 600 }}>
-          ©️ {new Date().getFullYear()} Karly's Cleaning Services LLC. All rights reserved.
+          {`©️ ${new Date().getFullYear()} Karly's Cleaning Services LLC. All rights reserved.`}
         </p>
       </footer>
     </div>

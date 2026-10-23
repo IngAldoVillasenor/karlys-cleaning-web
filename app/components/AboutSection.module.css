@@ -1,268 +1,226 @@
 .aboutSection {
-  background: linear-gradient(135deg, #1b2a4e 0%, #0f172a 100%);
-  color: #cbd5e1;
-  padding: 5rem 5%;
+  background: white;
+  color: var(--muted);
+  padding: 70px 0;
 }
-
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
+  width: min(1180px, calc(100% - 80px));
+  margin: auto;
 }
-
-.aboutSection,
-.aboutIntro,
-.purposeCard,
-.valuesSection {
-  scroll-margin-top: 12rem;
-}
-
 .aboutIntro {
   display: grid;
-  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  grid-template-columns: 1.4fr 1fr;
+  gap: 85px;
   align-items: start;
-  gap: clamp(2rem, 5vw, 4rem);
 }
-
 .eyebrow {
-  margin: 0 0 0.75rem;
-  color: #48cae4;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  color: var(--teal);
   text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 10px;
+  font-weight: 600;
+  margin: 0 0 15px;
 }
-
 .title {
-  margin: 0 0 1rem;
-  color: #ffffff;
-  font-size: clamp(2rem, 4vw, 2.75rem);
-  font-weight: 800;
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 46px;
+  color: var(--ink);
+  letter-spacing: -0.03em;
+  margin-bottom: 18px;
+  line-height: 1.1;
+}
+.story p:not(.eyebrow) {
+  font-size: 14px;
+  line-height: 1.9;
+  margin: 0 0 20px;
+}
+.story .lead {
+  color: var(--ink);
+  font-weight: 500;
+}
+.trustPanel {
+  background: var(--paper);
+  padding: 35px;
+  border-radius: 5px;
+  border-top: 2px solid var(--teal);
+}
+.trustIcon {
+  color: var(--teal);
+  margin-bottom: 18px;
+}
+.trustPanel h3 {
+  font-family: var(--font-heading);
+  color: var(--ink);
+  font-weight: 400;
+  font-size: 27px;
+  margin-bottom: 18px;
   line-height: 1.2;
 }
-
-.story p:not(.eyebrow) {
-  margin: 0 0 1.25rem;
-}
-
-.story .lead {
-  color: #ffffff;
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
-.trustPanel {
-  padding: clamp(1.5rem, 3vw, 2rem);
-  border: 1px solid rgba(72, 202, 228, 0.3);
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.04);
-}
-
-.trustIcon {
-  color: #48cae4;
-  margin-bottom: 1rem;
-}
-
-.trustPanel h3 {
-  margin: 0 0 1rem;
-  color: #ffffff;
-  font-size: 1.4rem;
-  line-height: 1.3;
-}
-
 .trustPanel p {
-  margin: 0;
+  font-size: 13px;
+  line-height: 1.9;
 }
-
 .insurance {
-  border-top: 1px solid rgba(72, 202, 228, 0.3);
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
+  margin-top: 22px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
 }
-
-.insurance span,
+.insurance span {
+  display: block;
+  color: var(--teal);
+  text-transform: uppercase;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+}
 .insurance strong {
   display: block;
+  color: var(--ink);
+  font-size: 13px;
+  margin: 8px 0;
 }
-
-.insurance span {
-  color: #48cae4;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.insurance strong {
-  color: #ffffff;
-  margin: 0.35rem 0;
-}
-
 .insurance p {
-  font-size: 0.95rem;
+  font-size: 12px;
 }
-
 .purposeGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2rem;
-  margin-top: 3.5rem;
+  gap: 30px;
+  margin-top: 65px;
 }
-
 .purposeCard {
-  background: #ffffff;
-  color: #475569;
-  padding: clamp(1.5rem, 3vw, 2.5rem);
-  border-top: 4px solid #48cae4;
-  border-radius: 12px;
+  padding: 40px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
 }
-
-.purposeCard .eyebrow {
-  color: #08788e;
+.purposeCard:first-child {
+  background: var(--ink);
+  color: #cbd3df;
+  border-color: var(--ink);
 }
-
+.purposeCard:first-child .eyebrow {
+  color: #8dd9df;
+}
 .purposeCard h3,
 .valuesHeading h3 {
-  margin: 0 0 1.25rem;
-  font-size: 1.8rem;
-  font-weight: 800;
-  line-height: 1.25;
+  font-family: var(--font-heading);
+  color: var(--ink);
+  font-weight: 400;
+  font-size: 35px;
+  letter-spacing: -0.03em;
+  margin: 0 0 22px;
+  line-height: 1.2;
 }
-
-.purposeCard h3 {
-  color: #1b2a4e;
-}
-
 .purposeCard p:not(.eyebrow) {
-  margin: 0 0 1.25rem;
+  font-size: 13px;
+  line-height: 1.9;
+  margin-bottom: 20px;
 }
-
-.purposeCard .statement {
-  color: #1b2a4e;
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
 .purposeCard p:last-child {
   margin-bottom: 0;
 }
-
+.purposeCard .statement {
+  color: var(--ink);
+  font-size: 15px;
+}
+.purposeCard:first-child h3,
+.purposeCard:first-child .statement {
+  color: white;
+}
 .valuesSection {
-  margin-top: 4rem;
+  margin-top: 65px;
 }
-
-.valuesHeading h3 {
-  color: #ffffff;
-}
-
 .valuesGrid {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 1.5rem;
+  gap: 25px;
   list-style: none;
+  margin: 30px 0 0;
   padding: 0;
-  margin: 2rem 0 0;
 }
-
 .value {
-  border-top: 1px solid rgba(72, 202, 228, 0.4);
-  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
 }
-
 .valueNumber {
+  color: var(--teal);
+  font-size: 11px;
   display: block;
-  color: #48cae4;
-  font-size: 0.85rem;
-  font-weight: 700;
-  margin-bottom: 0.75rem;
+  margin-bottom: 15px;
 }
-
 .value h4 {
-  color: #ffffff;
-  font-size: 1.1rem;
-  line-height: 1.4;
-  margin: 0 0 0.75rem;
+  color: var(--ink);
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 12px;
 }
-
 .value p {
-  font-size: 0.95rem;
-  margin: 0;
+  font-size: 12px;
+  line-height: 1.9;
 }
-
 .ctaContainer {
   text-align: center;
-  margin-top: 3.5rem;
+  margin-top: 65px;
+  padding-top: 40px;
+  border-top: 1px solid var(--line);
 }
-
 .ctaContainer p {
-  color: #ffffff;
-  margin: 0 0 1.25rem;
-  font-size: 1.15rem;
+  font-family: var(--font-heading);
+  font-size: 30px;
+  color: var(--ink);
+  margin-bottom: 20px;
 }
-
 .ctaButton {
   display: inline-block;
-  padding: 1rem 2.5rem;
-  border-radius: 50px;
-  background: #48cae4;
-  color: #1b2a4e;
-  font-weight: 800;
+  padding: 14px 25px;
+  background: var(--ink);
+  color: white;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 500;
   text-decoration: none;
-  transition: background-color 0.2s ease;
 }
-
 .ctaButton:hover {
-  background: #90e0ef;
+  background: var(--teal);
 }
-
-.ctaButton:focus-visible {
-  outline: 3px solid #ffb703;
-  outline-offset: 5px;
-}
-
-@media (max-width: 1100px) {
+@media (max-width: 1000px) {
+  .aboutIntro {
+    gap: 35px;
+  }
   .valuesGrid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
-
-@media (max-width: 768px) {
+@media (max-width: 760px) {
   .aboutSection {
-    padding: 3.5rem 5%;
+    padding: 45px 0;
   }
-
-  .aboutSection,
-  .aboutIntro,
-  .purposeCard,
-  .valuesSection {
-    scroll-margin-top: 17rem;
+  .container {
+    width: calc(100% - 40px);
   }
-
   .aboutIntro,
   .purposeGrid {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: 1fr;
   }
-
+  .purposeCard {
+    padding: 28px;
+  }
   .purposeGrid,
   .valuesSection {
-    margin-top: 2.5rem;
+    margin-top: 45px;
   }
-
   .valuesGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-}
-
-@media (max-width: 480px) {
-  .valuesGrid {
-    grid-template-columns: minmax(0, 1fr);
+  .title {
+    font-size: 38px;
   }
 }
-
-@media (max-width: 400px) {
-  .aboutSection,
-  .aboutIntro,
-  .purposeCard,
-  .valuesSection {
-    scroll-margin-top: 14rem;
+@media (max-width: 450px) {
+  .valuesGrid {
+    grid-template-columns: 1fr;
+  }
+  .trustPanel {
+    padding: 28px;
   }
 }

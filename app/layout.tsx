@@ -1,44 +1,60 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import SiteHeader from "./components/SiteHeader";
+import SiteFooter from "./components/SiteFooter";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/next"
-import { SpeedInsights } from "@vercel/speed-insights/next"
 
-const geistSans = Geist({
+const geist = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
+const preview = process.env.VERCEL_ENV === "preview";
 export const metadata: Metadata = {
-  title: "Karly's Cleaning Services | Top House Cleaning in West Chester, PA",
-  description: "Dependable and detailed cleaning services in West Chester, PA. Specializing in family homes, move-ins, and move-outs. Get 20% off your first cleaning!",
-  keywords: ["cleaning services West Chester PA", "house cleaning", "move out cleaning", "maid service", "local cleaners"],
+  metadataBase: new URL("https://www.karlyscleaning.com"),
+  title: {
+    default: "Karly's Cleaning | A cleaner home. More time for you.",
+    template: "%s | Karly's Cleaning",
+  },
+  description:
+    "Thoughtful residential cleaning for West Chester and neighboring Chester County communities. Locally based, liability insured, and focused on the details. Request a free quote.",
+  alternates: { canonical: "/" },
+  robots: preview
+    ? { index: false, follow: false }
+    : { index: true, follow: true },
   openGraph: {
     title: "Karly's Cleaning Services | West Chester, PA",
-    description: "Professional residential cleaning services. Enjoy a sparkling home without the stress!",
-    url: 'https://karlys-cleaning-web.vercel.app',
+    description: "A cleaner home. More time for the things you love.",
+    url: "/",
     siteName: "Karly's Cleaning Services",
-    locale: 'en_US',
-    type: 'website',
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/hero-image.jpg",
+        alt: "Residential cleaning with Karly's Cleaning Services",
+      },
+    ],
   },
 };
-
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en" className={geist.variable}>
+      <body>
+        <SiteHeader />
+        {children}
+        <SiteFooter />
+        {process.env.VERCEL_ENV === "production" && (
+          <>
+            <Analytics />
+            <SpeedInsights />
+          </>
+        )}
+      </body>
     </html>
   );
 }

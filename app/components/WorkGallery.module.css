@@ -1,0 +1,273 @@
+.comparison {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  background: white;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.comparePhoto {
+  position: relative;
+  min-height: clamp(350px, 29vw, 660px);
+  overflow: hidden;
+}
+.comparePhoto img {
+  object-fit: cover;
+}
+.beforeLayer {
+  position: absolute;
+  inset: 0;
+}
+.beforeLabel,
+.afterLabel {
+  position: absolute;
+  top: 18px;
+  padding: 5px 12px;
+  background: rgba(255, 255, 255, 0.95);
+  font-size: var(--small-size);
+  color: var(--ink);
+  border-radius: 2px;
+  pointer-events: none;
+}
+.beforeLabel {
+  left: 18px;
+}
+.afterLabel {
+  right: 18px;
+}
+.divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: white;
+  pointer-events: none;
+  transform: translateX(-1px);
+}
+.divider > span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: var(--ink);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 2px 12px #0003;
+}
+.slider {
+  appearance: none;
+  -webkit-appearance: none;
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  cursor: ew-resize;
+  z-index: 2;
+}
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+}
+.slider::-moz-range-thumb {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  background: transparent;
+}
+.slider::-moz-range-track {
+  background: transparent;
+}
+.slider:focus-visible {
+  outline-offset: -5px;
+  outline: 3px solid var(--ink);
+}
+.compareCopy {
+  padding: clamp(30px, 3.5vw, 80px);
+  align-self: center;
+}
+.compareCopy h3 {
+  font-family: var(--font-heading);
+  font-size: clamp(35px, 2.7vw, 62px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+.compareCopy p {
+  font-size: var(--body-size);
+  color: var(--muted);
+  line-height: 1.9;
+  margin: 18px 0 22px;
+}
+.pairButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+.pairButtons button {
+  padding: 8px 11px;
+  border: 1px solid #adc8cc;
+  color: var(--ink);
+  background: transparent;
+  font-size: var(--small-size);
+  border-radius: 3px;
+}
+.pairButtons button[aria-pressed="true"] {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: white;
+}
+.dragHint {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  font-size: var(--small-size);
+  color: var(--muted);
+}
+.photos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+  margin-top: 32px;
+}
+.photo {
+  display: block;
+  border: 0;
+  background: none;
+  padding: 0;
+  text-align: left;
+  color: var(--ink);
+}
+.photoImage {
+  display: block;
+  position: relative;
+  aspect-ratio: 1.5;
+  overflow: hidden;
+  border-radius: 4px;
+}
+.photoImage img {
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+.photo:hover img {
+  transform: scale(1.04);
+}
+.expand {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 30px;
+  height: 30px;
+  background: var(--surface);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+.photoCategory {
+  display: block;
+  font-size: var(--small-size);
+  letter-spacing: 0.12em;
+  color: var(--teal);
+  margin-top: 15px;
+}
+.photoTitle {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: clamp(24px, 1.7vw, 38px);
+  margin-top: 4px;
+}
+.dialog {
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--ink);
+  max-width: 900px;
+  width: calc(100% - 32px);
+  max-height: 90dvh;
+}
+.dialog::backdrop {
+  background: rgba(13, 23, 43, 0.88);
+}
+.dialogInner {
+  padding: 24px;
+}
+.close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  color: var(--ink);
+  background: var(--surface);
+  z-index: 2;
+}
+.largeImage {
+  position: relative;
+  height: 65dvh;
+}
+.largeImage img {
+  object-fit: contain;
+}
+.dialogCaption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 13px;
+}
+.dialogCaption small {
+  display: block;
+  color: var(--muted);
+}
+.dialogCaption button {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: white;
+  color: var(--ink);
+}
+@media (max-width: 760px) {
+  .comparison {
+    grid-template-columns: 1fr;
+  }
+  .comparePhoto {
+    min-height: 280px;
+  }
+  .compareCopy {
+    padding: 28px 22px;
+  }
+  .compareCopy h3 {
+    font-size: 31px;
+  }
+  .photos {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .photoImage {
+    aspect-ratio: 1.7;
+  }
+  .dialogInner {
+    padding: 12px;
+  }
+  .largeImage {
+    height: 60dvh;
+  }
+}

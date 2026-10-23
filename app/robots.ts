@@ -1,11 +1,9 @@
-import { MetadataRoute } from 'next'
- 
+import type { MetadataRoute } from "next";
 export default function robots(): MetadataRoute.Robots {
+  if (process.env.VERCEL_ENV === "preview")
+    return { rules: { userAgent: "*", disallow: "/" } };
   return {
-    rules: {
-      userAgent: '*',
-      allow: '/',
-    },
-    sitemap: 'https://karlys-cleaning-web.vercel.app/sitemap.xml',
-  }
+    rules: { userAgent: "*", allow: "/" },
+    sitemap: "https://www.karlyscleaning.com/sitemap.xml",
+  };
 }

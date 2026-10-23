@@ -1,0 +1,59 @@
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 5vw, 140px);
+  align-items: center;
+  padding-block: 65px;
+}
+.hero h1 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: clamp(46px, 4.5vw, 110px);
+  letter-spacing: -0.045em;
+  line-height: 1.1;
+}
+.hero h1 em {
+  color: var(--teal);
+}
+.hero p {
+  margin: 25px 0 28px;
+  color: var(--muted);
+  max-width: 48ch;
+  font-size: var(--body-size);
+}
+.photo {
+  height: clamp(420px, 31vw, 740px);
+  position: relative;
+  border-radius: 120px 5px 5px 5px;
+  overflow: hidden;
+}
+.photo img {
+  object-fit: cover;
+  object-position: center 35%;
+}
+@media (max-width: 760px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-block: 40px;
+  }
+  .photo {
+    height: 320px;
+  }
+  .hero h1 {
+    font-size: 48px;
+  }
+}
+
+.brandIntro {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+.brandIntro :global(.eyebrow) { margin-bottom: 0; }
+.storyLogo { --logo-size: clamp(96px, 7vw, 150px); }
+@media (max-width: 760px) {
+  .brandIntro { gap: 18px; }
+  .storyLogo { --logo-size: 88px; }
+}

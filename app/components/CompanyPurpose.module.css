@@ -1,0 +1,101 @@
+.companyPurpose {
+  margin-top: clamp(32px, 3vw, 65px);
+}
+.purposeGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(24px, 2.5vw, 60px);
+}
+.purposeCard {
+  padding: clamp(28px, 3vw, 65px);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: white;
+  color: var(--muted);
+}
+.eyebrow {
+  color: var(--teal);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: var(--small-size);
+  font-weight: 600;
+  margin: 0 0 15px;
+}
+.purposeCard h3,
+.valuesHeading h3 {
+  font-family: var(--font-heading);
+  color: var(--ink);
+  font-weight: 400;
+  font-size: clamp(35px, 2.5vw, 58px);
+  letter-spacing: -0.03em;
+  margin: 0 0 22px;
+  line-height: 1.2;
+}
+.purposeCard p:not(.eyebrow) {
+  font-size: var(--body-size);
+  line-height: 1.85;
+  max-width: 70ch;
+  margin-bottom: 20px;
+}
+.purposeCard p:last-child {
+  margin-bottom: 0;
+}
+.purposeCard .statement {
+  color: var(--ink);
+}
+.valuesSection {
+  margin-top: clamp(40px, 4vw, 85px);
+}
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(24px, 2.5vw, 60px);
+  list-style: none;
+  margin: 30px 0 0;
+  padding: 0;
+}
+.value {
+  border-top: 1px solid #b3c9c8;
+  padding-top: 20px;
+}
+.valueNumber {
+  color: var(--teal);
+  font-family: var(--font-heading);
+  font-size: clamp(24px, 1.7vw, 36px);
+  display: block;
+  margin-bottom: 12px;
+}
+.value h4 {
+  color: var(--ink);
+  font-weight: 600;
+  font-size: var(--body-size);
+  margin-bottom: 12px;
+}
+.value p {
+  color: var(--muted);
+  font-size: var(--body-size);
+  line-height: 1.85;
+  max-width: 55ch;
+}
+@media (max-width: 1200px) {
+  .valuesGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 760px) {
+  .purposeGrid {
+    grid-template-columns: 1fr;
+  }
+  .valuesGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 500px) {
+  .purposeCard {
+    padding: 24px;
+  }
+  .valuesGrid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}

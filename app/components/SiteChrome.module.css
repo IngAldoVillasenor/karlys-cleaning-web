@@ -1,0 +1,223 @@
+.topbar {
+  background: var(--ink);
+  color: white;
+  border-bottom: 3px solid var(--gold);
+  font-size: var(--small-size);
+  letter-spacing: 0.03em;
+}
+.topbarInner {
+  min-height: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.topbarInner span,
+.topbarInner a {
+  display: inline-flex;
+  gap: 7px;
+  align-items: center;
+  text-decoration: none;
+}
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 246, 235, 0.98);
+  border-bottom: 1px solid var(--line);
+}
+.headerInner {
+  min-height: var(--header-height);
+  padding-block: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.brand {
+  display: inline-flex;
+  gap: 22px;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.headerLogo {
+  --logo-size: clamp(100px, 6vw, 136px);
+}
+.footerLogo {
+  --logo-size: clamp(160px, 10vw, 210px);
+}
+.brandDescriptor {
+  display: grid;
+  gap: 3px;
+  font-size: clamp(13px, 0.95vw, 19px);
+  font-weight: 500;
+}
+.brandDescriptor small {
+  font-size: var(--small-size);
+  color: var(--muted);
+  font-weight: 400;
+}
+.desktopNav {
+  display: flex;
+  gap: clamp(22px, 2.1vw, 55px);
+  margin-left: auto;
+  margin-right: 28px;
+  font-size: clamp(14px, 0.9vw, 18px);
+  font-weight: 500;
+}
+.desktopNav a {
+  text-decoration: none;
+}
+.desktopNav a:hover {
+  color: var(--teal);
+}
+.headerInner .headerCta {
+  font-size: clamp(13px, 0.85vw, 17px);
+  padding: 15px 22px;
+}
+.menuButton {
+  display: none;
+  background: transparent;
+  border: 0;
+  color: var(--ink);
+  padding: 10px;
+}
+.mobileNav {
+  padding: 12px 20px 24px;
+  background: var(--paper);
+  border-top: 1px solid var(--line);
+}
+.mobileNav:not([hidden]) {
+  display: grid;
+  gap: 4px;
+}
+.mobileNav a:not(:last-child) {
+  padding: 10px 0;
+  text-decoration: none;
+}
+.footer {
+  background: var(--paper);
+  border-top: 1px solid var(--line);
+  padding: 64px 0 0;
+}
+.footerGrid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.65fr 1fr 1fr;
+  gap: 38px;
+  padding-bottom: 48px;
+}
+.footer h2 {
+  font-size: clamp(13px, 0.85vw, 17px);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.footerGrid > div > a:not(.brand) {
+  display: block;
+  font-size: clamp(14px, 0.9vw, 18px);
+  margin-bottom: 8px;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.footerGrid > div > a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.footerGrid p {
+  font-size: clamp(14px, 0.9vw, 18px);
+  color: var(--muted);
+  line-height: 1.9;
+}
+.footerIntro {
+  margin-top: 15px;
+}
+.footerLink {
+  margin-top: 20px;
+}
+.footerLink svg {
+  vertical-align: middle;
+}
+.footerBottom {
+  border-top: 1px solid var(--line);
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: var(--small-size);
+  color: var(--muted);
+}
+@media (min-width: 901px) {
+  .mobileNav:not([hidden]) {
+    display: none;
+  }
+}
+@media (max-width: 1400px) {
+  .header .brandDescriptor {
+    display: none;
+  }
+  .desktopNav {
+    gap: 20px;
+    margin-right: 8px;
+  }
+  .footerGrid {
+    gap: 24px;
+  }
+}
+@media (max-width: 900px) {
+  .desktopNav,
+  .headerInner .headerCta {
+    display: none;
+  }
+  .menuButton {
+    display: flex;
+  }
+  .headerLogo {
+    --logo-size: 80px;
+  }
+  .header .brandDescriptor {
+    display: grid;
+  }
+  .footerGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 36px;
+  }
+}
+@media (max-width: 600px) {
+  .topbarInner {
+    justify-content: center;
+    min-height: 30px;
+  }
+  .topbarInner > span {
+    display: none;
+  }
+  .brandDescriptor {
+    font-size: 12px;
+  }
+  .brandDescriptor small {
+    font-size: 10px;
+    max-width: 140px;
+  }
+  .brand {
+    gap: 12px;
+  }
+  .headerInner {
+    gap: 10px;
+  }
+  .footer {
+    padding-top: 40px;
+  }
+  .footerGrid {
+    grid-template-columns: 1fr;
+    gap: clamp(22px, 2.1vw, 55px);
+  }
+  .footerBottom {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+@media (max-width: 360px) {
+  .header .brandDescriptor {
+    max-width: 130px;
+  }
+}

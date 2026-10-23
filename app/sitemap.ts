@@ -1,12 +1,15 @@
-import { MetadataRoute } from 'next'
- 
+import type { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: 'https://karlys-cleaning-web.vercel.app',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
+      url: "https://www.karlyscleaning.com",
+      changeFrequency: "monthly",
       priority: 1,
     },
-  ]
+    {
+      url: "https://www.karlyscleaning.com/about",
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+  ];
 }

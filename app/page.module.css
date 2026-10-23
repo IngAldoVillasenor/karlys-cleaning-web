@@ -1,15 +1,16 @@
 .hero {
-  padding: 62px 0 48px;
+  padding: clamp(34px, 3.2vw, 80px) 0 40px;
+  background: linear-gradient(110deg, var(--paper) 60%, #e5f7f5 60%);
 }
 .heroGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 64px;
+  gap: clamp(40px, 5vw, 150px);
   align-items: center;
 }
 .heroCopy h1 {
   font-family: var(--font-heading);
-  font-size: clamp(45px, 5.1vw, 74px);
+  font-size: clamp(56px, 4.8vw, 124px);
   font-weight: 400;
   line-height: 1.07;
   letter-spacing: -0.045em;
@@ -21,19 +22,19 @@
 }
 .heroCopy > p:not(.offer) {
   color: var(--muted);
-  max-width: 410px;
+  max-width: 38em;
   margin: 25px 0 28px;
-  font-size: 14px;
+  font-size: var(--body-size);
   line-height: 1.9;
 }
 .heroCopy :global(.eyebrow) {
-  font-size: 10px;
+  font-size: var(--small-size);
 }
 .smallLine {
   display: inline-block;
   vertical-align: middle;
-  width: 25px;
-  height: 1px;
+  width: 32px;
+  height: 3px;
   background: var(--teal);
   margin-right: 9px;
 }
@@ -44,26 +45,26 @@
   gap: 22px;
 }
 .heroActions :global(.text-link) {
-  font-size: 11px;
+  font-size: var(--small-size);
 }
 .offer {
   margin-top: 30px;
-  font-size: 11px;
+  font-size: var(--small-size);
   color: var(--muted);
 }
 .offer > span {
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.1em;
   color: var(--ink);
-  background: #f1e5be;
+  background: var(--gold);
   padding: 5px 8px;
   margin-right: 8px;
   border-radius: 2px;
 }
 .heroPhoto {
   position: relative;
-  height: 555px;
-  border-radius: 160px 8px 8px 8px;
+  height: clamp(520px, 34vw, 800px);
+  border-radius: 180px 12px 12px 12px;
 }
 .heroPhoto > img {
   object-fit: cover;
@@ -79,16 +80,17 @@
   display: flex;
   align-items: center;
   gap: 15px;
-  border: 1px solid #e7e5dc;
+  border: 1px solid var(--gold);
+  box-shadow: 0 12px 35px #2c427b12;
   border-radius: 4px;
-  font-size: 12px;
+  font-size: var(--small-size);
 }
 .photoNote svg {
   color: var(--teal);
 }
 .photoNote small {
   display: block;
-  font-size: 10px;
+  font-size: var(--small-size);
   color: var(--muted);
   margin-top: 3px;
 }
@@ -96,7 +98,7 @@
   position: absolute;
   bottom: 12px;
   left: 24px;
-  font-size: 9px;
+  font-size: var(--small-size);
   color: white;
   text-shadow: 0 1px 5px #000;
 }
@@ -104,15 +106,18 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-  border-bottom: 1px solid var(--line);
-  padding: 26px 0 35px;
+  background: var(--surface);
+  border-block: 1px solid var(--line);
+  padding: 30px 24px;
+  margin-top: 30px;
+  border-radius: 6px;
 }
 .trustStrip > span {
   display: flex;
   gap: 14px;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
+  font-size: var(--small-size);
 }
 .trustStrip > span + span {
   border-left: 1px solid var(--line);
@@ -123,7 +128,7 @@
 }
 .trustStrip small {
   display: block;
-  font-size: 10px;
+  font-size: var(--small-size);
   color: var(--muted);
 }
 .services,
@@ -131,7 +136,7 @@
 .story,
 .reviews,
 .faq {
-  padding: 85px 0;
+  padding: clamp(64px, 5vw, 125px) 0;
 }
 .sectionHead {
   display: flex;
@@ -141,14 +146,14 @@
   margin-bottom: 38px;
 }
 .sectionHead > p {
-  font-size: 13px;
+  font-size: var(--body-size);
   color: var(--muted);
   padding-bottom: 5px;
 }
 .serviceGrid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 28px;
+  gap: clamp(24px, 2vw, 48px);
 }
 .serviceCard {
   min-width: 0;
@@ -174,13 +179,13 @@
   color: var(--ink);
   background: var(--paper);
   border-radius: 2px;
-  font-size: 10px;
+  font-size: var(--small-size);
 }
 .serviceText {
   padding: 22px 0 0;
 }
 .serviceName {
-  font-size: 9px;
+  font-size: var(--small-size);
   color: var(--teal);
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -190,22 +195,23 @@
   font-family: var(--font-heading);
   font-weight: 400;
   letter-spacing: -0.02em;
-  font-size: 26px;
+  font-size: clamp(28px, 1.9vw, 44px);
   margin: 10px 0 12px;
   line-height: 1.2;
   min-height: 2.4em;
 }
 .serviceText p {
-  font-size: 14px;
+  font-size: var(--body-size);
   color: var(--muted);
   line-height: 1.9;
-  min-height: 112px;
+  min-height: 5.7em;
+  max-width: 55ch;
 }
 .serviceDetail {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 10px;
+  font-size: var(--small-size);
   margin: 20px 0;
   padding-top: 16px;
   border-top: 1px solid var(--line);
@@ -214,18 +220,19 @@
   color: var(--teal);
 }
 .serviceText a {
-  font-size: 11px;
+  font-size: var(--small-size);
 }
 .lastMinute {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px 25px;
-  background: #edf0e8;
+  background: var(--surface);
+  border-left: 4px solid var(--brand-cyan);
   margin-top: 36px;
   border-radius: 4px;
   gap: 20px;
-  font-size: 12px;
+  font-size: var(--small-size);
 }
 .lastMinute > span {
   display: flex;
@@ -244,7 +251,8 @@
 .process {
   background: var(--ink);
   color: white;
-  padding: 65px 0;
+  border-top: 5px solid var(--brand-cyan);
+  padding: clamp(55px, 4vw, 90px) 0;
 }
 .process > div {
   display: grid;
@@ -253,10 +261,10 @@
   align-items: center;
 }
 .process :global(.section-title) {
-  font-size: 35px;
+  font-size: clamp(35px, 2.7vw, 60px);
 }
 .process :global(.eyebrow) {
-  color: #8dd9df;
+  color: var(--cyan);
 }
 .steps {
   list-style: none;
@@ -268,30 +276,30 @@
 }
 .steps li > span {
   display: block;
-  color: #8dd9df;
+  color: var(--gold);
   font-family: var(--font-heading);
-  font-size: 25px;
+  font-size: clamp(28px, 2vw, 44px);
   margin-bottom: 18px;
 }
 .steps h3 {
-  font-size: 12px;
+  font-size: var(--small-size);
   margin-bottom: 10px;
   font-weight: 500;
 }
 .steps p {
-  color: #c2ccdb;
-  font-size: 11px;
+  color: #e0e9f4;
+  font-size: var(--small-size);
   line-height: 1.9;
 }
 .storyGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 90px;
+  gap: clamp(40px, 5vw, 140px);
   align-items: center;
 }
 .storyImage {
   position: relative;
-  height: 450px;
+  height: clamp(450px, 32vw, 720px);
   border-radius: 5px 5px 120px 5px;
   overflow: hidden;
 }
@@ -306,17 +314,18 @@
   color: white;
   background: var(--ink);
   padding: 10px 15px;
-  font-size: 10px;
+  font-size: var(--small-size);
 }
 .storyCopy h2 {
-  font-size: 42px;
+  font-size: clamp(38px, 2.9vw, 70px);
 }
 .storyCopy h2 em {
   color: var(--teal);
 }
 .storyCopy p {
+  max-width: 65ch;
   color: var(--muted);
-  font-size: 14px;
+  font-size: var(--body-size);
   margin-top: 22px;
   line-height: 1.9;
 }
@@ -324,12 +333,12 @@
   margin-top: 24px;
 }
 .reviews {
-  background: #eef0e9;
+  background: var(--surface);
 }
 .reviewGrid {
   display: grid;
   grid-template-columns: 1.15fr 1fr;
-  gap: 100px;
+  gap: clamp(45px, 6vw, 160px);
   margin-top: 40px;
 }
 .reviewGrid figure {
@@ -348,13 +357,13 @@
 }
 .featuredReview blockquote {
   font-family: var(--font-heading);
-  font-size: 33px;
+  font-size: clamp(32px, 2.4vw, 56px);
   line-height: 1.4;
   letter-spacing: -0.02em;
   margin: 0 0 25px;
 }
 .reviewGrid figcaption {
-  font-size: 11px;
+  font-size: var(--small-size);
   font-weight: 600;
 }
 .reviewGrid figcaption span {
@@ -367,21 +376,21 @@
 }
 .otherReviews figure + figure {
   padding-top: 24px;
-  border-top: 1px solid #d4dcd2;
+  border-top: 1px solid #c7dedc;
 }
 .otherReviews blockquote {
   color: var(--muted);
-  font-size: 13px;
+  font-size: var(--body-size);
   line-height: 1.9;
   margin: 0 0 16px;
 }
 .faqGrid {
   display: grid;
   grid-template-columns: 1fr 1.35fr;
-  gap: 90px;
+  gap: clamp(40px, 5vw, 140px);
 }
 .faqGrid > div > p {
-  font-size: 13px;
+  font-size: var(--body-size);
   color: var(--muted);
   margin: 22px 0;
 }
@@ -398,7 +407,7 @@
   justify-content: space-between;
   gap: 18px;
   padding: 21px 0;
-  font-size: 13px;
+  font-size: var(--body-size);
   font-weight: 500;
   cursor: pointer;
 }
@@ -415,68 +424,101 @@
 }
 .questions details p {
   color: var(--muted);
-  font-size: 14px;
+  font-size: var(--body-size);
   padding: 0 24px 23px 0;
   line-height: 1.9;
 }
 .contact {
   background: var(--ink);
   color: white;
-  padding: 80px 0;
+  padding: clamp(65px, 5vw, 120px) 0;
+  border-top: 5px solid var(--gold);
 }
 .contactGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 90px;
+  gap: clamp(40px, 5vw, 140px);
   align-items: center;
 }
 .contactCopy :global(.eyebrow) {
-  color: #8dd9df;
+  color: var(--cyan);
 }
 .contactCopy h2 {
-  font-size: 48px;
+  font-size: clamp(40px, 3.1vw, 76px);
 }
 .contactCopy h2 em {
-  color: #8dd9df;
+  color: var(--cyan);
 }
 .contactCopy > p {
   margin-top: 25px;
-  color: #cbd3df;
-  font-size: 13px;
+  color: #e0e9f4;
+  font-size: var(--body-size);
   line-height: 1.9;
-  max-width: 390px;
+  max-width: 45ch;
 }
 .contactPhone {
   display: inline-flex;
   gap: 20px;
   align-items: center;
   font-family: var(--font-heading);
-  font-size: 31px;
+  font-size: clamp(30px, 2.2vw, 50px);
   text-decoration: none;
   margin-top: 30px;
 }
 .contactDetails {
   margin-top: 25px;
-  font-size: 12px;
-  color: #cbd3df;
+  font-size: var(--small-size);
+  color: #e0e9f4;
 }
 .contactDetails > span {
-  font-size: 9px;
+  font-size: var(--small-size);
   letter-spacing: 0.1em;
-  color: #8dd9df;
+  color: var(--cyan);
 }
 .contactDetails p {
   margin-top: 8px;
 }
 .contactCopy .contactOffer {
-  border-top: 1px solid #3d4c67;
+  border-top: 1px solid #6175a1;
   padding-top: 25px;
-  font-size: 11px;
+  font-size: var(--small-size);
 }
 .contactOffer strong {
   color: white;
   font-weight: 500;
 }
+
+.heroSeal {
+  --logo-size: clamp(140px, 10vw, 230px);
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  box-shadow: 0 12px 32px #15294e24;
+}
+.storyBrand,
+.contactBrand {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+.storyBrand :global(.eyebrow),
+.contactBrand :global(.eyebrow) {
+  margin-bottom: 0;
+}
+.storyLogo {
+  --logo-size: clamp(96px, 7vw, 150px);
+}
+.contactLogo {
+  --logo-size: clamp(110px, 8vw, 170px);
+}
+
+@media (min-width: 1440px) {
+  .serviceText h3 {
+    min-height: 1.2em;
+  }
+}
+
 @media (max-width: 1000px) {
   .heroGrid {
     gap: 38px;
@@ -491,7 +533,7 @@
     gap: 16px;
   }
   .heroActions :global(.button) {
-    font-size: 12px;
+    font-size: var(--small-size);
   }
   .storyGrid,
   .faqGrid,
@@ -509,6 +551,25 @@
 }
 @media (max-width: 760px) {
   .hero {
+    background: var(--paper);
+  }
+  .heroSeal {
+    --logo-size: 110px;
+    top: 16px;
+    right: 16px;
+  }
+  .storyBrand,
+  .contactBrand {
+    gap: 18px;
+  }
+  .storyLogo {
+    --logo-size: 88px;
+  }
+  .contactLogo {
+    --logo-size: 100px;
+  }
+
+  .hero {
     padding: 38px 0 24px;
   }
   .heroGrid {
@@ -519,22 +580,22 @@
     font-size: clamp(43px, 8vw, 62px);
   }
   .heroCopy > p:not(.offer) {
-    font-size: 13px;
+    font-size: var(--body-size);
     margin: 20px 0 22px;
     max-width: 470px;
   }
   .heroCopy :global(.eyebrow) {
-    font-size: 8px;
+    font-size: 10px;
   }
   .heroActions {
     gap: 18px;
   }
   .offer {
     margin-top: 20px;
-    font-size: 10px;
+    font-size: var(--small-size);
   }
   .offer > span {
-    font-size: 7px;
+    font-size: 9px;
     padding: 4px 6px;
   }
   .heroPhoto {
@@ -607,7 +668,7 @@
     padding: 45px 0;
   }
   .process > div {
-    gap: 28px;
+    gap: clamp(24px, 2vw, 48px);
   }
   .steps {
     grid-template-columns: 1fr;
@@ -623,10 +684,10 @@
     top: 0;
   }
   .steps h3 {
-    font-size: 14px;
+    font-size: var(--body-size);
   }
   .steps p {
-    font-size: 12px;
+    font-size: var(--small-size);
   }
   .storyGrid,
   .faqGrid,
@@ -640,7 +701,7 @@
     border-bottom-right-radius: 90px;
   }
   .storyCopy h2 {
-    font-size: 35px;
+    font-size: clamp(35px, 2.7vw, 60px);
   }
   .featuredReview blockquote {
     font-size: 30px;

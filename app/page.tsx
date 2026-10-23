@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import WorkGallery from "./components/WorkGallery";
 import QuoteForm from "./components/QuoteForm";
+import BrandLogo from "./components/BrandLogo";
 import styles from "./page.module.css";
 
 const services = [
@@ -140,6 +141,7 @@ export default function Home() {
               priority
               sizes="(max-width: 760px) 100vw, 50vw"
             />
+            <BrandLogo className={styles.heroSeal} sizes="(max-width: 760px) 140px, 280px" />
             <div className={styles.photoNote}>
               <ShieldCheck size={24} aria-hidden="true" />
               <span>
@@ -309,7 +311,10 @@ export default function Home() {
             <span>From our team, with care.</span>
           </div>
           <div className={styles.storyCopy}>
-            <span className="eyebrow">Meet Karly&apos;s Cleaning</span>
+            <div className={styles.storyBrand}>
+              <BrandLogo className={styles.storyLogo} sizes="180px" />
+              <span className="eyebrow">Meet Karly&apos;s Cleaning</span>
+            </div>
             <h2 className="section-title">
               More than a clean home.
               <br />
@@ -413,7 +418,10 @@ export default function Home() {
       <section id="contact" className={styles.contact}>
         <div className={"container " + styles.contactGrid}>
           <div className={styles.contactCopy}>
-            <span className="eyebrow">Let us take it from here</span>
+            <div className={styles.contactBrand}>
+              <BrandLogo className={styles.contactLogo} sizes="200px" />
+              <span className="eyebrow">Let us take it from here</span>
+            </div>
             <h2 className="section-title">
               A little less on your list.
               <br />

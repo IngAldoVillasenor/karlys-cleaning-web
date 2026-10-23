@@ -1,0 +1,14 @@
+.logo {
+  position: relative;
+  display: block;
+  width: var(--logo-size, 120px);
+  aspect-ratio: 1;
+  flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.logo img {
+  object-fit: contain;
+  /* Remove only the source PNG's transparent inset, keeping the original art. */
+  transform: translateY(-0.85%) scale(1.2);
+}

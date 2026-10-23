@@ -1,14 +1,14 @@
 .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 90px;
+  gap: clamp(40px, 5vw, 140px);
   align-items: center;
   padding-block: 65px;
 }
 .hero h1 {
   font-family: var(--font-heading);
   font-weight: 400;
-  font-size: clamp(46px, 5vw, 70px);
+  font-size: clamp(46px, 4.5vw, 110px);
   letter-spacing: -0.045em;
   line-height: 1.1;
 }
@@ -18,11 +18,11 @@
 .hero p {
   margin: 25px 0 28px;
   color: var(--muted);
-  max-width: 430px;
-  font-size: 14px;
+  max-width: 48ch;
+  font-size: var(--body-size);
 }
 .photo {
-  height: 420px;
+  height: clamp(420px, 31vw, 740px);
   position: relative;
   border-radius: 120px 5px 5px 5px;
   overflow: hidden;
@@ -43,4 +43,17 @@
   .hero h1 {
     font-size: 48px;
   }
+}
+
+.brandIntro {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+.brandIntro :global(.eyebrow) { margin-bottom: 0; }
+.storyLogo { --logo-size: clamp(96px, 7vw, 150px); }
+@media (max-width: 760px) {
+  .brandIntro { gap: 18px; }
+  .storyLogo { --logo-size: 88px; }
 }

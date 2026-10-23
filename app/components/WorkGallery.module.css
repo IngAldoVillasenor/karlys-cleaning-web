@@ -1,13 +1,13 @@
 .comparison {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
-  background: var(--paper);
+  background: var(--surface);
   border-radius: 6px;
   overflow: hidden;
 }
 .comparePhoto {
   position: relative;
-  min-height: 350px;
+  min-height: clamp(350px, 29vw, 660px);
   overflow: hidden;
 }
 .comparePhoto img {
@@ -23,7 +23,7 @@
   top: 18px;
   padding: 5px 12px;
   background: rgba(255, 255, 255, 0.95);
-  font-size: 10px;
+  font-size: var(--small-size);
   color: var(--ink);
   border-radius: 2px;
   pointer-events: none;
@@ -90,18 +90,18 @@
   outline: 3px solid var(--ink);
 }
 .compareCopy {
-  padding: 45px;
+  padding: clamp(30px, 3.5vw, 80px);
   align-self: center;
 }
 .compareCopy h3 {
   font-family: var(--font-heading);
-  font-size: 35px;
+  font-size: clamp(35px, 2.7vw, 62px);
   font-weight: 400;
   line-height: 1.2;
   letter-spacing: -0.03em;
 }
 .compareCopy p {
-  font-size: 12px;
+  font-size: var(--body-size);
   color: var(--muted);
   line-height: 1.9;
   margin: 18px 0 22px;
@@ -113,10 +113,10 @@
 }
 .pairButtons button {
   padding: 8px 11px;
-  border: 1px solid #ccd3d0;
+  border: 1px solid #adc8cc;
   color: var(--ink);
   background: transparent;
-  font-size: 10px;
+  font-size: var(--small-size);
   border-radius: 3px;
 }
 .pairButtons button[aria-pressed="true"] {
@@ -129,7 +129,7 @@
   align-items: center;
   gap: 8px;
   margin-top: 20px;
-  font-size: 9px;
+  font-size: var(--small-size);
   color: var(--muted);
 }
 .photos {
@@ -166,14 +166,14 @@
   right: 12px;
   width: 30px;
   height: 30px;
-  background: var(--paper);
+  background: var(--surface);
   border-radius: 50%;
   display: grid;
   place-items: center;
 }
 .photoCategory {
   display: block;
-  font-size: 8px;
+  font-size: var(--small-size);
   letter-spacing: 0.12em;
   color: var(--teal);
   margin-top: 15px;
@@ -181,14 +181,14 @@
 .photoTitle {
   display: block;
   font-family: var(--font-heading);
-  font-size: 22px;
+  font-size: clamp(24px, 1.7vw, 38px);
   margin-top: 4px;
 }
 .dialog {
   padding: 0;
   border: 0;
   border-radius: 8px;
-  background: var(--paper);
+  background: var(--surface);
   color: var(--ink);
   max-width: 900px;
   width: calc(100% - 32px);
@@ -211,7 +211,7 @@
   border: 0;
   border-radius: 50%;
   color: var(--ink);
-  background: var(--paper);
+  background: var(--surface);
   z-index: 2;
 }
 .largeImage {

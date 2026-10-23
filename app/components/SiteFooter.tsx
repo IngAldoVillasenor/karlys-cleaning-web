@@ -1,4 +1,4 @@
-import Image from "next/image";
+import BrandLogo from "./BrandLogo";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import styles from "./SiteChrome.module.css";
@@ -12,15 +12,7 @@ export default function SiteFooter() {
             className={styles.brand}
             aria-label="Karly's Cleaning home"
           >
-            <Image
-              src="/5 Background Removed.png"
-              alt=""
-              width={64}
-              height={64}
-            />
-            <span className={styles.brandName}>
-              Karly&apos;s<span>Cleaning Services</span>
-            </span>
+            <BrandLogo className={styles.footerLogo} decorative sizes="250px" />
           </Link>
           <p className={styles.footerIntro}>
             A cleaner home.

@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+import BrandLogo from "./BrandLogo";
 import Link from "next/link";
 import { useRef, useState } from "react";
 import { ArrowUpRight, MapPin, Menu, Phone, X } from "lucide-react";
@@ -40,15 +40,10 @@ export default function SiteHeader() {
             aria-label="Karly's Cleaning home"
             onClick={() => setOpen(false)}
           >
-            <Image
-              src="/5 Background Removed.png"
-              alt=""
-              width={60}
-              height={60}
-              priority
-            />
-            <span className={styles.brandName}>
-              {"Karly's"}<span>Cleaning Services</span>
+            <BrandLogo className={styles.headerLogo} priority decorative sizes="(max-width: 900px) 100px, 170px" />
+            <span className={styles.brandDescriptor}>
+              <span>Care in every corner.</span>
+              <small>West Chester, Pennsylvania</small>
             </span>
           </Link>
           <nav className={styles.desktopNav} aria-label="Main navigation">

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import AboutSection from "../components/AboutSection";
+import BrandLogo from "../components/BrandLogo";
 import styles from "./page.module.css";
 export const metadata: Metadata = {
   title: "Our Story",
@@ -16,7 +17,10 @@ export default function AboutPage() {
     <main id="main-content" tabIndex={-1}>
       <div className={"container " + styles.hero}>
         <div>
-          <span className="eyebrow">Our story · West Chester, PA</span>
+          <div className={styles.brandIntro}>
+            <BrandLogo className={styles.storyLogo} sizes="180px" />
+            <span className="eyebrow">Our story · West Chester, PA</span>
+          </div>
           <h1>
             Good people.
             <br />

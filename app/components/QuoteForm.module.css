@@ -1,5 +1,5 @@
 .form {
-  background: var(--paper);
+  background: white;
   color: var(--ink);
   border-radius: 6px;
   padding: clamp(30px, 3vw, 65px);

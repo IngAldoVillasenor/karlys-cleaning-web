@@ -98,7 +98,7 @@
 }
 .footer {
   background: var(--paper);
-  border-top: 5px solid var(--gold);
+  border-top: 1px solid var(--line);
   padding: 64px 0 0;
 }
 .footerGrid {
@@ -151,7 +151,7 @@
     display: none;
   }
 }
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
   .header .brandDescriptor {
     display: none;
   }

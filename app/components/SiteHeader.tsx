@@ -50,6 +50,7 @@ export default function SiteHeader() {
             <Link href="/#services">Services</Link>
             <Link href="/#work">Our work</Link>
             <Link href="/about">About us</Link>
+            <Link href="/#values">Our values</Link>
             <Link href="/#faq">FAQs</Link>
           </nav>
           <Link href="/#contact" className={"button " + styles.headerCta}>
@@ -80,6 +81,9 @@ export default function SiteHeader() {
           </Link>
           <Link href="/about" onClick={() => setOpen(false)}>
             About us
+          </Link>
+          <Link href="/#values" onClick={() => setOpen(false)}>
+            Our values
           </Link>
           <Link href="/#faq" onClick={() => setOpen(false)}>
             FAQs

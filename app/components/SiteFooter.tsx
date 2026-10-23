@@ -25,6 +25,7 @@ export default function SiteFooter() {
           <Link href="/#services">Our services</Link>
           <Link href="/#work">Our work</Link>
           <Link href="/about">Our story</Link>
+          <Link href="/#values">Our values</Link>
           <Link href="/#faq">Common questions</Link>
         </div>
         <div>

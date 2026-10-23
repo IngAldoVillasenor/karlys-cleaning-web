@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import WorkGallery from "./components/WorkGallery";
 import QuoteForm from "./components/QuoteForm";
+import CompanyPurpose from "./components/CompanyPurpose";
 import BrandLogo from "./components/BrandLogo";
 import styles from "./page.module.css";
 
@@ -133,51 +134,53 @@ export default function Home() {
               <span>WELCOME HOME</span> Enjoy 20% off your first cleaning.
             </p>
           </div>
-          <div className={styles.heroPhoto}>
-            <Image
-              src="/hero-image.jpg"
-              alt="A bright, welcoming home being carefully cleaned"
-              fill
-              priority
-              sizes="(max-width: 760px) 100vw, 50vw"
-            />
-            <BrandLogo className={styles.heroSeal} sizes="(max-width: 760px) 140px, 280px" />
-            <div className={styles.photoNote}>
-              <ShieldCheck size={24} aria-hidden="true" />
+          <figure className={styles.heroMedia}>
+            <div className={styles.heroPhoto}>
+              <Image
+                src="/hero-image.jpg"
+                alt="A bright, welcoming home being carefully cleaned"
+                fill
+                priority
+                sizes="(max-width: 760px) 100vw, 50vw"
+              />
+            </div>
+            <figcaption className={styles.photoNote}>
+              <BrandLogo className={styles.heroSeal} sizes="160px" />
               <span>
                 Care you can count on.
                 <small>Local service. Liability insured.</small>
               </span>
-            </div>
-            <span className={styles.photoCaption}>
-              A fresh feeling, from the moment you walk in.
-            </span>
-          </div>
+              <ShieldCheck size={26} aria-hidden="true" />
+            </figcaption>
+          </figure>
         </div>
       </section>
 
-      <div
-        className={"container " + styles.trustStrip}
-        aria-label="Our commitments"
-      >
-        <span>
-          <MapPin size={20} aria-hidden="true" />
+      <div className={styles.trustBand}>
+        <div
+          className={"container " + styles.trustStrip}
+          aria-label="Our commitments"
+        >
           <span>
-            Rooted in West Chester<small>Your neighbors, here to help</small>
+            <MapPin size={20} aria-hidden="true" />
+            <span>
+              Rooted in West Chester<small>Your neighbors, here to help</small>
+            </span>
           </span>
-        </span>
-        <span>
-          <ShieldCheck size={20} aria-hidden="true" />
           <span>
-            Liability insured<small>Coverage through The Hartford</small>
+            <ShieldCheck size={20} aria-hidden="true" />
+            <span>
+              Liability insured<small>Coverage through The Hartford</small>
+            </span>
           </span>
-        </span>
-        <span>
-          <Heart size={20} aria-hidden="true" />
           <span>
-            Care in every corner<small>Your home, treated with respect</small>
+            <Heart size={20} aria-hidden="true" />
+            <span>
+              Care in every corner<small>Your home, treated with respect</small>
+            </span>
           </span>
-        </span>
+        </div>
+
       </div>
 
       <section id="services" className={styles.services}>
@@ -206,10 +209,12 @@ export default function Home() {
                     fill
                     sizes="(max-width: 760px) 100vw, 33vw"
                   />
-                  <span>{service.number}</span>
                 </div>
                 <div className={styles.serviceText}>
-                  <span className={styles.serviceName}>{service.name}</span>
+                  <span className={styles.serviceName}>
+                    <span aria-hidden="true">{service.number}</span>
+                    {service.name}
+                  </span>
                   <h3>{service.title}</h3>
                   <p>{service.description}</p>
                   <span className={styles.serviceDetail}>
@@ -301,15 +306,17 @@ export default function Home() {
 
       <section id="promise" className={styles.story}>
         <div id="about" className={"container " + styles.storyGrid}>
-          <div className={styles.storyImage}>
-            <Image
-              src="/gallery/Window cleaning 2.jpeg"
-              alt="A member of the cleaning team carefully cleaning a window"
-              fill
-              sizes="(max-width: 760px) 100vw, 45vw"
-            />
-            <span>From our team, with care.</span>
-          </div>
+          <figure className={styles.storyMedia}>
+            <div className={styles.storyImage}>
+              <Image
+                src="/gallery/Window cleaning 2.jpeg"
+                alt="A member of the cleaning team carefully cleaning a window"
+                fill
+                sizes="(max-width: 760px) 100vw, 45vw"
+              />
+            </div>
+            <figcaption>From our team, with care.</figcaption>
+          </figure>
           <div className={styles.storyCopy}>
             <div className={styles.storyBrand}>
               <BrandLogo className={styles.storyLogo} sizes="180px" />
@@ -335,6 +342,21 @@ export default function Home() {
               Get to know us <ArrowUpRight size={17} aria-hidden="true" />
             </Link>
           </div>
+        </div>
+      </section>
+
+      <section className={styles.purpose} aria-labelledby="purpose-title">
+        <div className="container">
+          <div className={styles.sectionHead}>
+            <div>
+              <span className="eyebrow">The heart of Karly&apos;s Cleaning</span>
+              <h2 id="purpose-title" className="section-title">
+                The purpose behind our care.
+              </h2>
+            </div>
+            <p>What we believe in, and how we bring it home.</p>
+          </div>
+          <CompanyPurpose />
         </div>
       </section>
 

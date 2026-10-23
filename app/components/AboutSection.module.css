@@ -1,5 +1,5 @@
 .aboutSection {
-  background: white;
+  background: var(--paper);
   color: var(--muted);
   padding: 70px 0;
 }
@@ -41,10 +41,10 @@
   font-weight: 500;
 }
 .trustPanel {
-  background: var(--paper);
+  background: white;
   padding: 35px;
   border-radius: 5px;
-  border-top: 4px solid var(--gold);
+  border: 1px solid var(--line);
 }
 .trustIcon {
   color: var(--teal);
@@ -83,82 +83,6 @@
 .insurance p {
   font-size: var(--small-size);
 }
-.purposeGrid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 30px;
-  margin-top: 65px;
-}
-.purposeCard {
-  padding: clamp(30px, 3vw, 65px);
-  border: 1px solid var(--line);
-  border-radius: 5px;
-}
-.purposeCard:first-child {
-  background: var(--ink);
-  color: #e0e9f4;
-  border-color: var(--ink);
-}
-.purposeCard:first-child .eyebrow {
-  color: var(--cyan);
-}
-.purposeCard h3,
-.valuesHeading h3 {
-  font-family: var(--font-heading);
-  color: var(--ink);
-  font-weight: 400;
-  font-size: clamp(35px, 2.5vw, 58px);
-  letter-spacing: -0.03em;
-  margin: 0 0 22px;
-  line-height: 1.2;
-}
-.purposeCard p:not(.eyebrow) {
-  font-size: var(--body-size);
-  line-height: 1.9;
-  margin-bottom: 20px;
-}
-.purposeCard p:last-child {
-  margin-bottom: 0;
-}
-.purposeCard .statement {
-  color: var(--ink);
-  font-size: var(--body-size);
-}
-.purposeCard:first-child h3,
-.purposeCard:first-child .statement {
-  color: white;
-}
-.valuesSection {
-  margin-top: 65px;
-}
-.valuesGrid {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 25px;
-  list-style: none;
-  margin: 30px 0 0;
-  padding: 0;
-}
-.value {
-  border-top: 1px solid var(--line);
-  padding-top: 20px;
-}
-.valueNumber {
-  color: var(--teal);
-  font-size: var(--small-size);
-  display: block;
-  margin-bottom: 15px;
-}
-.value h4 {
-  color: var(--ink);
-  font-weight: 500;
-  font-size: var(--body-size);
-  margin-bottom: 12px;
-}
-.value p {
-  font-size: var(--small-size);
-  line-height: 1.9;
-}
 .ctaContainer {
   text-align: center;
   margin-top: 65px;
@@ -188,9 +112,6 @@
   .aboutIntro {
     gap: 35px;
   }
-  .valuesGrid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
 }
 @media (max-width: 760px) {
   .aboutSection {
@@ -199,28 +120,14 @@
   .container {
     width: calc(100% - 40px);
   }
-  .aboutIntro,
-  .purposeGrid {
+  .aboutIntro {
     grid-template-columns: 1fr;
-  }
-  .purposeCard {
-    padding: 28px;
-  }
-  .purposeGrid,
-  .valuesSection {
-    margin-top: 45px;
-  }
-  .valuesGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .title {
     font-size: 38px;
   }
 }
 @media (max-width: 450px) {
-  .valuesGrid {
-    grid-template-columns: 1fr;
-  }
   .trustPanel {
     padding: 28px;
   }
